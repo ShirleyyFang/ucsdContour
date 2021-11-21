@@ -16,7 +16,7 @@ class App extends Component{
             <Route path = '/profile' element={<Profile/>}></Route>
           </Routes>
           </BrowserRouter>
-        </Fragment>
+        </Fragment> 
     )
   }
 }
