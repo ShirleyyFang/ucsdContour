@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Navigate, Route} from 'react-router-dom';
 import { Layout, Menu, Drawer, Button, Form, Input, Space, Row, Col, Select, Checkbox} from 'antd';
 import 'antd/dist/antd.css';
+
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import './NavBars.css'
 
 
 const { Header } = Layout;
@@ -53,7 +58,14 @@ export default function NavBar(){
       </Menu>
 
       <Drawer title="Sign In" width={500} placement="right" onClose={onClose} visible={visible1}>
-      <Form name="basic" labelCol={{span: 8,}} wrapperCol={{span: 16,}} initialValues={{remember: true,}}
+      <Authenticator>
+      {() => (
+        <main>
+          <Navigate to ="/profile" />
+        </main>
+      )}
+      </Authenticator>
+      {/* <Form name="basic" labelCol={{span: 8,}} wrapperCol={{span: 16,}} initialValues={{remember: true,}}
       onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
       <Form.Item label="Username" name="username"
         rules={[
@@ -81,11 +93,19 @@ export default function NavBar(){
           Submit
         </Button>
       </Form.Item>
-    </Form>
+    </Form> */}
+
       </Drawer>
 
       <Drawer title="Create a new account" width={720} onClose={onClose} visible={visible2} bodyStyle={{ paddingBottom: 80 }}>
-          <Form layout="vertical" hideRequiredMark>
+      <Authenticator initialState="signUp">
+      {() => (
+        <main>
+          <Navigate to ="/profile" />
+        </main>
+      )}
+      </Authenticator>
+          {/* <Form layout="vertical" hideRequiredMark>
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter user name' }]}>
@@ -100,7 +120,7 @@ export default function NavBar(){
             </Row>
             <Row gutter={16}>
               <Col span={12}>
-                <Form.Item name="irstName" label="First Name" rules={[{ required: true, message: 'Please enter your first name' }]}>
+                <Form.Item name="firstName" label="First Name" rules={[{ required: true, message: 'Please enter your first name' }]}>
                   <Input placeholder="First name"></Input>
                 </Form.Item>
               </Col>
@@ -142,7 +162,7 @@ export default function NavBar(){
                   </Form.Item>
               </Col>
             </Row>
-          </Form>
+          </Form> */}
         </Drawer>
 
 

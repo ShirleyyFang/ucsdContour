@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import React from 'react'
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import Profile from './pages/profile';
 import Home from './pages/home';
 import Cases from './pages/casesInterface';
 import { Fragment } from 'react';
 
-class App extends Component{
-  render(){
+export default function App() {
     return (
         <Fragment>
           <BrowserRouter>
@@ -18,6 +17,5 @@ class App extends Component{
           </BrowserRouter>
         </Fragment> 
     )
-  }
 }
-export default App;
+
