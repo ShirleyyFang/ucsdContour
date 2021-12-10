@@ -6,8 +6,8 @@ import { Carousel, Row, Col, Space, Image } from 'antd';
 import { Route, Navigate } from 'react-router-dom';
 import { Amplify } from "aws-amplify";
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
-import awsconfig from '../aws-exports';
-Amplify.configure(awsconfig);
+// import awsconfig from '../aws-exports';
+// Amplify.configure(awsconfig);
 
 function onChange(a, b, c) {
   console.log(a, b, c);
