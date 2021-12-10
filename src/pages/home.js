@@ -35,6 +35,7 @@ function Home() {
 // return authState === AuthState.SignedIn && user ? (
 //   <div><NavBarUser/></div>
 //   ) : (
+    return (
       <div>
         <NavBar></NavBar>
         <Space></Space>
@@ -68,6 +69,7 @@ function Home() {
   
         <Footer></Footer>
        </div>
+    )
 // );
 }
 
