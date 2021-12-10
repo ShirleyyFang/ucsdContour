@@ -22,21 +22,20 @@ const contentStyle = {
 };
 
 function Home() {
-  const [authState, setAuthState] = React.useState();
-  const [user, setUser] = React.useState();
+//   const [authState, setAuthState] = React.useState();
+//   const [user, setUser] = React.useState();
 
-  React.useEffect(() => {
-      return onAuthUIStateChange((nextAuthState, authData) => {
-          setAuthState(nextAuthState);
-          setUser(authData)
-      });
-  }, []);
+//   React.useEffect(() => {
+//       return onAuthUIStateChange((nextAuthState, authData) => {
+//           setAuthState(nextAuthState);
+//           setUser(authData)
+//       });
+//   }, []);
 
-return authState === AuthState.SignedIn && user ? (
-  <div><NavBarUser/></div>
-  ) : (
+// return authState === AuthState.SignedIn && user ? (
+//   <div><NavBarUser/></div>
+//   ) : (
       <div>
-        {console.log("*** authState: ", user)}
         <NavBar></NavBar>
         <Space></Space>
         <div>
@@ -68,8 +67,8 @@ return authState === AuthState.SignedIn && user ? (
         </div>
   
         <Footer></Footer>
-      </div>
-);
+       </div>
+// );
 }
 
 export default Home;
