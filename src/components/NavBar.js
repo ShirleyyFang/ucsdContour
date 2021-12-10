@@ -4,7 +4,7 @@ import { Layout, Menu, Drawer, Button, Form, Input, Space, Row, Col, Select, Che
 import 'antd/dist/antd.css';
 
 
-import { Authenticator } from '@aws-amplify/ui-react';
+import { Authenticator,CheckboxField,useAuthenticator,TextField } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import './NavBars.css'
 
@@ -58,7 +58,7 @@ export default function NavBar(){
       </Menu>
 
       <Drawer title="Sign In" width={500} placement="right" onClose={onClose} visible={visible1}>
-      <Authenticator>
+      <Authenticator className="SignIn">
       {() => (
         <main>
           <Navigate to ="/profile" />
@@ -98,13 +98,35 @@ export default function NavBar(){
       </Drawer>
 
       <Drawer title="Create a new account" width={720} onClose={onClose} visible={visible2} bodyStyle={{ paddingBottom: 80 }}>
-      <Authenticator initialState="signUp">
-      {() => (
-        <main>
-          <Navigate to ="/profile" />
-        </main>
-      )}
-      </Authenticator>
+          <Authenticator initialState="signUp" components={{
+            SignUp:{
+              FormFields() {
+                const { validationErrors } = useAuthenticator();
+                return (
+                  <>
+                    <Authenticator.SignUp.FormFields />
+                    <TextField
+                    label="graduate years"
+                    placeholder="graduate years"
+                    />
+                    <CheckboxField
+                      errorMessage={validationErrors.acknowledgement}
+                      hasError={!!validationErrors.acknowledgement}
+                      name="acknowledgement"
+                      value="yes"
+                      label="I agree with the Terms & Conditions"
+                    />
+                  </>
+                )
+            }
+          }
+          }}>
+            {() => (
+              <main>
+                <Navigate to="/profile" />
+              </main>
+            )}
+          </Authenticator>
           {/* <Form layout="vertical" hideRequiredMark>
             <Row gutter={16}>
               <Col span={12}>

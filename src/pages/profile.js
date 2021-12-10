@@ -3,12 +3,16 @@ import { Fragment } from 'react/cjs/react.production.min';
 import NavBarUser from '../components/NavBarUser';
 import {Card, Avatar, Typography, Row, Col, Checkbox, Button} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 
 const {Paragraph} = Typography;
+
 
 function Profile() {
 
     const [editableStr, setEditableStr] = useState('This is an editable text.');
+    const navigate = useNavigate();
+    let cancers = [];
 
     return (
         <Fragment>
@@ -41,33 +45,42 @@ function Profile() {
             </div>
             <div style={{ position: 'absolute', top: 500, right: '5%', width: '55%' }}>
                 <Card title="Choose Cancer Types" >
+                <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
                     <Row>
                     <Col span ={8}>Head and Neck </Col> 
-                    <Col span ={16}><Checkbox onChange={onChange}>Yes</Checkbox></Col>
+                    <Col span ={16}><Checkbox value = "Head and Neck" onChange={onChange}>Yes</Checkbox></Col>
                     </Row>
                     <Row>
                     <Col span ={8}>Gynecologic </Col> 
-                    <Col span ={16}><Checkbox onChange={onChange}>Yes</Checkbox></Col>
+                    <Col span ={16}><Checkbox value = "Gynecologic" onChange={onChange}>Yes</Checkbox></Col>
                     </Row>
                     <Row>
                     <Col span ={8}>Gastrointestinal </Col> 
-                    <Col span ={16}><Checkbox onChange={onChange}>Yes</Checkbox></Col>
+                    <Col span ={16}><Checkbox value = "Gastrointestinal" onChange={onChange}>Yes</Checkbox></Col>
                     </Row>
                     <Row>
                     <Col span ={8}>Pediatric </Col> 
-                    <Col span ={16}><Checkbox onChange={onChange}>Yes</Checkbox></Col>
+                    <Col span ={16}><Checkbox value = "Pediatric" onChange={onChange}>Yes</Checkbox></Col>
                     </Row>
                     <Row>
                     <Col span ={8}>Genitourinary </Col> 
-                    <Col span ={16}><Checkbox onChange={onChange}>Yes</Checkbox></Col>
+                    <Col span ={16}><Checkbox value = "Genitourinary" onChange={onChange}>Yes</Checkbox></Col>
                     </Row>
+                </Checkbox.Group>
                 </Card>
-                <Button type="primary" htmlType="submit" style={{marginLeft:'85%'}}>Submit</Button>
+                <Button type="primary" htmlType="submit" style={{marginLeft:'85%'}} onClick={onClick}>Submit</Button>
             </div>
         </Fragment>
     );
+    function onChange(checkedValues) {
+        cancers = checkedValues;
+        console.log(cancers);
+    }
+    function onClick(){
+        navigate('/cases',{state: cancers});
+        console.log("pass",cancers)
+    }
 };
-function onChange(e) {
-    console.log(`checked = ${e.target.checked}`);
-  }
+
+
 export default Profile;

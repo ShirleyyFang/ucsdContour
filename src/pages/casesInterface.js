@@ -2,18 +2,21 @@ import React from 'react'
 import NavBarUser from '../components/NavBarUser';
 import CancerMenu from '../components/CancerMenu';
 import {Layout, Input} from 'antd';
+import { useLocation } from 'react-router';
 
 const {Header, Content} = Layout;
 const {Search} = Input;
 const onSearch = value => console.log(value);
 
 function CasesInterface() {
+  const {state} = useLocation();
+
   return (
     <Layout>
         <Header></Header>
         <NavBarUser></NavBarUser>
         <Layout>
-        <CancerMenu></CancerMenu>
+        <CancerMenu cancers={state}></CancerMenu>
         <Content
                 className="site-layout-background"
                 style={{

@@ -1,3 +1,6 @@
 .amplify-tabs {
     display: none;
-  }
+};
+.SignIn{
+  --amplify-shadows-medium:0px, 0px, 0px;
+}
