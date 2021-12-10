@@ -21,7 +21,6 @@ const contentStyle = {
   background: '#364d79',
 };
 
-
 function Home() {
   const [authState, setAuthState] = React.useState();
   const [user, setUser] = React.useState();
