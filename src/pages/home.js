@@ -9,6 +9,7 @@ import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
+
 function onChange(a, b, c) {
   console.log(a, b, c);
 }
