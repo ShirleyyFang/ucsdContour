@@ -6,8 +6,8 @@ import { Carousel, Row, Col, Space, Image } from 'antd';
 import { Route, Navigate } from 'react-router-dom';
 import { Amplify } from "aws-amplify";
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
-// import awsconfig from '../aws-exports';
-// Amplify.configure(awsconfig);
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
 
 function onChange(a, b, c) {
   console.log(a, b, c);
@@ -22,20 +22,19 @@ const contentStyle = {
 };
 
 function Home() {
-//   const [authState, setAuthState] = React.useState();
-//   const [user, setUser] = React.useState();
+  const [authState, setAuthState] = React.useState();
+  const [user, setUser] = React.useState();
 
-//   React.useEffect(() => {
-//       return onAuthUIStateChange((nextAuthState, authData) => {
-//           setAuthState(nextAuthState);
-//           setUser(authData)
-//       });
-//   }, []);
+  React.useEffect(() => {
+      return onAuthUIStateChange((nextAuthState, authData) => {
+          setAuthState(nextAuthState);
+          setUser(authData)
+      });
+  }, []);
 
-// return authState === AuthState.SignedIn && user ? (
-//   <div><NavBarUser/></div>
-//   ) : (
-    return (
+return authState === AuthState.SignedIn && user ? (
+  <div><NavBarUser/></div>
+  ) : (
       <div>
         <NavBar></NavBar>
         <Space></Space>
@@ -68,9 +67,8 @@ function Home() {
         </div>
   
         <Footer></Footer>
-       </div>
-    )
-// );
+      </div>
+);
 }
 
 export default Home;
