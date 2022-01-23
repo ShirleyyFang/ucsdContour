@@ -1,13 +1,13 @@
-import React from 'react';
-import { Layout, Menu } from 'antd';
+import React, {useState} from 'react';
+import { Layout, Menu, Button } from 'antd';
 
 const { Sider } = Layout;
 
-export default function CancerMenu(props){
-    console.log(props.cancers)
+export default function CancerMenu( props,{parentCallBack} ){
+    const [curCancer, setCurCancer] = useState(0);
     return (
-            <Sider width={200} className="site-layout-background" style={{ height: '700px' }}>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+            <Sider width={200} className="site-layout-background" style={{ height: '1000px' }}>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick = {({key}) => {setCurCancer(props.cancers[key]); props.onChange(props.cancers[key])}} >
                     {props.cancers.map((cancer,i) =>{
                         return <Menu.Item key ={i}>{cancer}</Menu.Item>
                     })}
