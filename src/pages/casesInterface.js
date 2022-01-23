@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import NavBarUser from '../components/NavBarUser';
 import CancerMenu from '../components/CancerMenu';
+import {NavLink, Navigate} from 'react-router-dom';
 import {Layout, Input, List} from 'antd';
 import { useLocation } from 'react-router';
 import './caseInterface.css';
@@ -62,7 +63,7 @@ function CasesInterface() {
             size="large"
             bordered
             dataSource={ cases[currentCancer] }
-            renderItem={item => <List.Item>{item}</List.Item>}
+            renderItem={item => <List.Item><NavLink to = "/questions" >{item}</NavLink></List.Item>}
           />
         </Content>
         </Layout>
