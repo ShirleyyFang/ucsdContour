@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import NavBarUser from '../components/NavBarUser';
 import CancerMenu from '../components/CancerMenu';
 import {NavLink, Navigate} from 'react-router-dom';
