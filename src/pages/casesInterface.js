@@ -43,6 +43,7 @@ function CasesInterface() {
   const handleClick = (newValue) =>{
     setCurrentCancer(newValue);
   }
+
   return (
     <Layout>
         <Header></Header>
@@ -63,7 +64,7 @@ function CasesInterface() {
             size="large"
             bordered
             dataSource={ cases[currentCancer] }
-            renderItem={item => <List.Item><NavLink to = "/questions" >{item}</NavLink></List.Item>}
+            renderItem={item => <List.Item><NavLink to = {"/questions/"+item} >{item}</NavLink></List.Item>}
           />
         </Content>
         </Layout>

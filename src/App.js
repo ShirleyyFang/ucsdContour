@@ -14,7 +14,7 @@ export default function App() {
             <Route path = '/' element={<Home />}></Route>
             <Route path = '/cases' element={<Cases/>}></Route>
             <Route path = '/profile' element={<Profile/>}></Route>
-            <Route path = '/questions' element={<Questions/>}></Route>
+            <Route path = '/questions/:caseId' element={<Questions/>}></Route>
           </Routes>
           </BrowserRouter>
         </Fragment> 
