@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import NavBarUser from '../components/NavBarUser';
-import {Layout, Menu, Pagination, Card} from 'antd';
+import {Layout, Menu, Pagination, Card, Carousel} from 'antd';
 import reactDom from 'react-dom';
 import { ConsoleLogger } from '@aws-amplify/core';
 
@@ -16,6 +16,18 @@ const questionTypes = [
   "OTVs",
   "Follow"
 ];
+
+function onChange(a, b, c) {
+  console.log(a, b, c);
+}
+
+const contentStyle = {
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#eee',
+};
 
 function Questions(){
     const [currentType, setCurrentType] = useState(questionTypes[0]);
@@ -44,10 +56,24 @@ function Questions(){
             margin: 0,
             minHeight: 280
           }}>
-            <Card style={{ width: 900, minHeight:300}}>
-            <div>
-              {currentType + " / Page " + currentPage}
-            </div>
+            <Card style={{ width: '90%', minHeight: 300 }}>
+              <div>
+                {currentType + " / Page " + currentPage}
+              </div>
+              <Carousel afterChange={onChange}>
+                <div>
+                  <h3 style={contentStyle}>1</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>2</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>3</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>4</h3>
+                </div>
+              </Carousel>
             </Card>
             <Pagination onChange={onChange} simple defaultCurrent={1} total={50}/>
         </Content>
