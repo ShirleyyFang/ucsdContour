@@ -22,31 +22,33 @@ function onChangeCarousel(a, b, c) {
 }
 
 const contentStyle = {
-  height: '800px',
+  height: '400px',
   color: 'black',
   lineHeight: '20px',
   background: '#eee',
+  overflow: 'auto',
 };
+const questionStyle = {
+  paddingBottom: '50px',
+};
+const buttonLineStyle = {
+  textAlign: 'center',
+}
+const buttonStyle = {
+  width:'180px'
+}
 
 function Questions() {
   const [currentType, setCurrentType] = useState(questionTypes[0]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [ModalAnswer, setModalAnswer] = useState(99);
+  const [multipleChoiceAnswer, setMultipleChoiceAnswer] = useState(false);
   const showModal = (value) => {
     setIsModalVisible(true);
-    setModalAnswer(value);
+    setMultipleChoiceAnswer(value.correct);
+    setModalAnswer(value.reason);
   };
-  const success = (value) => {
-    Modal.success({
-      content: 'some messages...some messages...',
-    });
-  }
-  const error = () => {
-    Modal.error({
-      content: 'some messages...some messages...',
-    });
-  }
   const handleOk = () => {
     setIsModalVisible(false);
   };
@@ -89,36 +91,37 @@ function Questions() {
                 </div>
                 <div>
                   <h3 style={contentStyle}>
-                    {/* {console.log(prostateCancerA[currentType][(currentPage-1)*3 + 1])} */}
                     {prostateCancerA[currentType][(currentPage-1)*3 + 1].type === "seeAnswerButton" ?
                      prostateCancerA[currentType][(currentPage-1)*3 + 1].questions.map((qa, i) => {
-                      return <div key={i}>
+                      return <div style = {questionStyle} key={i}>
                         {qa.question}
                         <div>{qa.answer}</div>
+                        <div style ={ buttonLineStyle }>
                         <Button type="primary" onClick={() => showModal(qa.answer)}>View Answer</Button>
                         <Modal title="Answer" visible={isModalVisible} onOk={handleOk}>
                           {ModalAnswer}
                         </Modal>
+                        </div>
                       </div>
                     })
                     :
                     <div>
-                      <div>{prostateCancerA[currentType][(currentPage-1)*3 + 1].question}</div>
-                      <div>
+                      <div style = {questionStyle}>{prostateCancerA[currentType][(currentPage-1)*3 + 1].question}</div>
+                      <div style ={ buttonLineStyle }>
                       {prostateCancerA[currentType][(currentPage-1)*3 + 1].options.map((oa,i) => {
-                        return <div><Button onClick={() => showModal(oa.reason)}>
+                        return <div><Button style ={buttonStyle} onClick={() => showModal(oa)}>
                             {oa.answer}
                           </Button>
                             <Modal title="Answer" visible={isModalVisible} onOk={handleOk}>
-                              <div>
-                              {oa.correct == true ? 
-                              <CheckCircleOutlined  style={{color:'green'}}/> :
-                              <CloseCircleOutlined   style={{color:'red'}}/>
+                              <div style={{textAlign: 'center'}}>
+                              {multipleChoiceAnswer == true ? 
+                              <CheckCircleOutlined  style={{color:'green', fontSize: '64px'}}/> :
+                              <CloseCircleOutlined  style={{color:'red', fontSize: '64px'}}/>
                               }
                               </div>
                               {ModalAnswer}
                             </Modal>
-                          </div>
+                        </div>
                       })}
                       </div>
                     </div>
