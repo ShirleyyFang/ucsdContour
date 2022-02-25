@@ -159,7 +159,90 @@ export const prostateCancerA = {
                 "-Patients with low-risk disease must have cT1-T2a disease, Gleason score 3+3, and a PSA <10 ng/mL.  A patient with low-risk disease who also has fewer than 3 positive biopsy cores with and no more than 50% tissue involvement in each involved core is classified as having very low-risk disease. "
             ]
         }
+    ],
+    "Treatment Paradigm":[
+        {
+            id:13,
+            type:'text',
+            title:null,
+            text:[
+                "Now that you have determined that Mr. H has low-risk prostate cancer (Gleason 3+3, T1c, PSA 4.3) and need to decide on the next steps in his management."
+            ]
+        },
+        {
+            id:14,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"Mr. H says that his urologist recommended radical prostatectomy as the best option for the management of his prostate cancer.  Do you agree with this assessment?  What alternatives would you be sure to discuss with Mr. H during your consultation?",
+                    answer:"While radical prostatectomy is an option for the treatment of low-risk prostate cancer, it should not be framed as a definitively superior treatment option.  Alternatives that should be discussed include active surveillance, EBRT, and brachytherapy. "
+                },
+                {
+                    question:"You mention the possible alternatives of active surveillance, EBRT, and brachytherapy to Mr. H.  He is surprised to hear that one option for managing his cancer is to hold off on treating it for now.  He asks, 'What are the chances that I'll be able to avoid treatment of my prostate cancer all together?'  What do you think are the chances that Mr. H would require some form of definitive therapy over the next 10 years?",
+                    answer:"Approximately 50% based on data from the ProtecT trial. That said, a reasonably healthy 58 year-old patient such as Mr. H has a life expectancy longer than 10 years.  With longer follow-up beyond 10 years, the likelihood that he would need definitive treatment at any point in the future would likely be higher than 50%. "
+                },
+                {
+                    question:"If Mr. H does decide that he is interested in active surveillance, are there any additional tests you would like to order to confirm that he is a good candidate for active surveillance? ",
+                    answer:"Additional tests may be done, though none are strictly necessary.  NCCN recommends consideration for a confirmatory prostate biopsy and/or a multiparametric prostate MRI in order to confirm candidacy for active surveillance.  If an MRI is to be done, it is a good idea to do this prior to the confirmatory biopsy so that any suspicious lesions can undergo targeted biopsy.  Patients with PI-RADS 4 or 5 lesions on mpMRI have been shown to be at increased risk for biopsy progression on active surveillance.  Additionally, genomic testing (Decipher, Oncotype DX, etc) could be ordered for men with low-risk (like Mr. H) or favorable intermediate-risk prostate cancer who are considering active surveillance. "
+                },
+                {
+                    question:"Mr. H is interested in active surveillance but does have some concerns about leaving a cancer in his body untreated.  He asks, 'Is there an increased chance of dying from prostate cancer if I choose active surveillance?'  How would you respond to Mr. H? ",
+                    answer:" Given Mr. H's low risk disease, the likelihood of prostate cancer death in his case would be quite small regardless of his treatment choice (active surveillance, radiation therapy, or radical prostatectomy).  In the 10-yr update from the ProtecT trial, there was no difference in prostate cancer-specific survival among those three treatment options. "
+                },
+                {
+                    question:"Mr. H then asks, 'If I choose active surveillance and then do eventually have to get treated, would I just need the surgery or radiation that are options right now, or would the treatments be tougher since my cancer has gotten worse?' How might you respond to Mr. H? ",
+                    answer:" It is true that active surveillance increases the likelihood of clinical disease progression (including things such as development of metastases, cT3/T4 disease, or initiation of long-term ADT) compared to surgery or radiation based on data from the ProtecT trial.  For example, 6.1% of men randomized to active surveillance developed metastatic disease on the ProtecT trial, compared to 2.4% and 2.9% for surgery and radiation respectively.  Similarly, a higher percentage of patients on active surveillance ultimately required long-term ADT (8.6% for AS vs 4.7% for surgery vs 5.5% RT).  Therefore, depending on Mr. H's subsequent disease course, additional therapy may be recommended in the future above and beyond what would be required to definitively manage his prostate cancer at this time. "
+                },
+                {
+                    question:"Mr. H asks you, 'If I do decide to go with this active surveillance plan, how will you know if my cancer is getting worse and needs to be treated?' What tests would you use in order to monitor his prostate cancer and how frequently would you do them? ",
+                    answer:"Per NCCN guidelines, recommendations for active surveillance include: " +
+                    "-PSA no more often than q6 months unless clinically indicated  " + 
+                    "-DRE no more often than q12 months unless clinically indicated  " + 
+                    "-Repeat MRI no more often than q12 months unless clinically indicated " + 
+                    "-Repeat biopsy no more often than q12 months unless clinically indicated " +
+                    "-can do within 6 months if initial biopsy was less than 10 cores " + 
+                    "-If there are no signs of clinical progression, it is also common practice to repeat biopsies approximately every 2 years instead of annually.  " + 
+                    "-Prostate prostate biopsy should also be done if one of the other tests above shows abnormal or changing results "
+                }
+            ]
+        },
+        {
+            id:15,
+            type:'text',
+            title:null,
+            text:[
+                "Mr. H thanks you for answering his questions and would like to proceed with active surveillance.  A multiparametric prostate MRI does not identify suspicious lesions and a confirmatory biopsy again demonstrates Gleason 3+3 disease, with results similar to his initial biopsy. "
+            ]
+        },
+        {
+            id:16,
+            type:'text',
+            title:null,
+            text:[
+                "As the two of you discussed, Mr. H had decided to proceed with active surveillance.  He continues to follow-up with you during his active surveillance plan, just in case he needs treatment. "
+            ]
+        },
+        {
+            id:17,
+            tye:'text',
+            title:null,
+            text:['id17 not sure how this is presented']
+        },
+        {
+            id:18,
+            type:'text',
+            title:null,
+            text:['Mr. H decides to continue with active surveillance per your recommendation. ']
+        },
+        {
+            id:19,
+            type:'text',
+            title:null,
+            text:["A year later, Mr. H returns to your office for a follow-up.  His most recent PSA is 7.  There is no change in his DRE.  He had a repeat TRUS biopsy two weeks ago per his plan urologist's plan for annual prostate biopsies.  The biopsy demonstrated Gleason 3+4 disease in 2/2 cores in the L base with up to 25% tissue involved.  Gleason 3+3 disease is found in 2/2 cores from the left mid with less than 5% tissue involvement.  All other cores on a standard 12-core biopsy were negative.  A repeat MRI is unchanged. "]
+        },
     ]
+
 
 
 

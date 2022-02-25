@@ -44,6 +44,12 @@ function Questions() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [ModalAnswer, setModalAnswer] = useState(99);
   const [multipleChoiceAnswer, setMultipleChoiceAnswer] = useState(false);
+
+  const showModalViewAnswer = (value) =>{
+    setIsModalVisible(true);
+    setModalAnswer(value);
+  }
+  
   const showModal = (value) => {
     setIsModalVisible(true);
     setMultipleChoiceAnswer(value.correct);
@@ -95,9 +101,8 @@ function Questions() {
                      prostateCancerA[currentType][(currentPage-1)*3 + 1].questions.map((qa, i) => {
                       return <div style = {questionStyle} key={i}>
                         {qa.question}
-                        <div>{qa.answer}</div>
                         <div style ={ buttonLineStyle }>
-                        <Button type="primary" onClick={() => showModal(qa.answer)}>View Answer</Button>
+                        <Button type="primary" onClick={() => showModalViewAnswer(qa.answer)}>View Answer</Button>
                         <Modal title="Answer" visible={isModalVisible} onOk={handleOk}>
                           {ModalAnswer}
                         </Modal>
