@@ -225,9 +225,14 @@ export const prostateCancerA = {
         },
         {
             id:17,
-            tye:'text',
+            type:'seeAnswerButton',
             title:null,
-            text:['id17 not sure how this is presented']
+            questions:[
+                {
+                    question:"Not sure how to display this question",
+                    answer:"Not sure how to display this question"
+                }
+            ]
         },
         {
             id:18,
@@ -241,6 +246,72 @@ export const prostateCancerA = {
             title:null,
             text:["A year later, Mr. H returns to your office for a follow-up.  His most recent PSA is 7.  There is no change in his DRE.  He had a repeat TRUS biopsy two weeks ago per his plan urologist's plan for annual prostate biopsies.  The biopsy demonstrated Gleason 3+4 disease in 2/2 cores in the L base with up to 25% tissue involved.  Gleason 3+3 disease is found in 2/2 cores from the left mid with less than 5% tissue involvement.  All other cores on a standard 12-core biopsy were negative.  A repeat MRI is unchanged. "]
         },
+        {
+            id:20,
+            type:"multiple choice",
+            title:null,
+            question: "Based on the given information, Mr. H's prostate cancer should be characterized as ___ risk prostate cancer, according to NCCN risk groups. ",
+            options: [
+                {
+                    answer:"Low",
+                    correct: false,
+                    reason:"Due to the presence of Gleason 3+4 disease, Mr. H's prostate cancer is no longer considered low risk. "
+                },
+                {
+                    answer:"Favorable Intermediate",
+                    correct: true,
+                    reason:"Mr. H has intermediate risk disease on the basis of his Gleason 3+4 biopsy findings, but does not meet criteria for unfavorable intermediate risk disease."
+                },
+                {
+                    answer:"Unfavorable Intermediate",
+                    correct:false,
+                    reason:"Close! While Mr. H does have intermediate risk disease based on his new biopsy results, he does not meet the criteria for unfavorable intermediate risk (which would require multiple intermediate risk factors, Gleason 4+3 disease, or >50% positive biopsy cores)"
+                },
+                {
+                    answer:"High",
+                    correct:false,
+                    reason:"Despite the change in his biopsy results, Mr. H does not meet any of the criteria for high risk prostate cancer."
+                }
+            ]
+        },
+        {
+            id:21,
+            type:'text',
+            title:null,
+            text:["Recommending definitive therapy at this time is a reasonable, and possibly preferred, approach in Mr. H’s case.  With regards to candidates for active surveillance, NCCN recommends that active surveillance is a potential treatment option for patients with low or favorable intermediate risk prostate cancer with life expectancy of at least 10 years. Additionally, precise criteria for triggering definitive therapy in patients on active surveillance are not universally established.  Because of the above, it would not be technically incorrect to consider continuation of active surveillance in Mr. H's case given that he still has favorable intermediate risk disease. That said, active surveillance should be approached with more caution in the setting of favorable intermediate risk disease.  Furthermore, the criteria by which a patient qualifies for favorable intermediate disease may also be relevant.  For example, a study by Musunuru et al (Journal of Urology 2016) compared outcomes in low and intermediate risk patients who were on active surveillance. In summary, their findings suggested that while active surveillance may be appropriate for patients with favorable intermediate risk disease with Gleason 6 disease, active surveillance leads to worse outcomes for patients with Gleason 7 disease. In Mr. H's case, he was reclassified as favorable intermediate risk disease by virtue of Gleason 3+4 disease on repeat biopsy. It is therefore a reasonable choice to proceed with definitive treatment in his case.   One possible approach in practice is to tend towards active surveillance for patients with low-risk disease and initiation of definitive therapy at the time of progression to intermediate risk disease.  However, it is important to understand that the available data paint a more nuanced picture with questions that remain incompletely answered as to the optimal candidates for active surveillance and the optimal criteria upon which active surveillance should give way to definitive therapy.  Additionally, patient age could be considered in this situation.  Had Mr. H been significantly older or had more significant comorbidities, having a higher threshold to transition from active surveillance to definitive therapy may be reasonable, as the competing risks of older age and other health issues may preclude the necessity for definitive therapy. "]
+        },
+        {
+            id:22,
+            type:'text',
+            title:null,
+            text:["After a discussion of continuing active surveillance vs starting definitive therapy, you and Mr. H agree that it is time to proceed with definitive therapy."]
+        },
+        {
+            id:23,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"Not sure how to display this question",
+                    answer:"Not sure how to display this question"
+                }
+            ]
+        },
+        {
+            id: 24,
+            type: 'learningPoints',
+            title: 'Learning Points',
+            text:[
+                "After a discussion of his treatment options, Mr. H discloses that he is quite fearful of undergoing any procedures.  He would like to move forward with definitive treatment with EBRT and is not interested in surgery or brachytherapy.  You agree to treat Mr. H with EBRT. ",
+                "Learning Points ",
+                "Treatment Paradigm: ",
+                "-Active Surveillance, RT with either ERBT or brachytherapy, and radical prostatectomy are all potentially treatment options for patients with low risk prostate cancer.  Approximately half of patients who opt for active surveillance may require some form of definitive therapy over the following 10 years. ",
+                "-A confirmation biopsy and/or mpMRI may be done prior to initiating active surveillance to help confirm candidacy for active surveillance.  Molecular tumor analysis through genomic testing may also be ordered for patients considering active surveillance vs definitive therapy.  ",
+                "-Active surveillance typically consists of serial DRE, PSA, prostate biopsy, and potentially prostate MRIs and regular intervals as outlined above ",
+                "-If a patient is placed on active surveillance, it is important to have a plan for what findings on surveillance tests would prompt a recommendation for definitive therapy.  For patients who progress from low risk to favorable intermediate risk disease, there is some gray area as to whether active surveillance is an acceptable option.  However, active surveillance should be approached cautiously in the setting of favorable intermediate risk disease.  There is some evidence to suggest that the criteria by which a patient qualifies for favorable intermediate risk disease is important and that patients who progress by Gleason grade should not remain on active surveillance. In practice, a common approach may be to recommend definitive treatment once a patient progresses from low to intermediate risk disease.  ",
+                "-For patients with favorable intermediate risk disease, definitive treatment options include radical prostatectomy and RT with either ERBT or brachytherapy. ADT is not typically recommended "
+            ]
+        }
     ]
 
 
