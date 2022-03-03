@@ -225,29 +225,76 @@ export const prostateCancerA = {
         },
         {
             id:17,
-            type:'seeAnswerButton',
+            type:'multiple choice',
             title:null,
-            questions:[
+            question:"Six months later, Mr. H's PSA is 6.0 (increased from 4.3).  He has no changes in symptoms.  What do you recommend at this point? ",
+            options: [
                 {
-                    question:"Not sure how to display this question",
-                    answer:"Not sure how to display this question"
+                    answer:"Continue with active surveillance (PSA q6 months; DRE, repeat biopsy, MRI no more often than q12 months)",
+                    correct:true,
+                    reason:""
+                },
+                {
+                    answer:"Order additional tests (ie repeat prostate biopsy or MRI ahead of previous schedule).",
+                    correct:false,
+                    reason:"tests could be ordered due to the rising PSA, his disease remains low risk at this time and it is also acceptable to continue with active surveillance. "
+                },
+                {
+                    answer:"Recommend definitive treatment.",
+                    correct:false,
+                    reason:"He continues to have low risk disease and remains a candidate for active surveillance.  Aside from a change in patient preference, it is unnecessary to switch to definitive therapy at this time"
                 }
             ]
         },
         {
             id:18,
+            type: 'text',
+            title: null,
+            text:['Great job, please proceed to next question']
+        },
+        {
+            id:19,
+            type:'text',
+            title: null,
+            text:['Based on prior background, please proceed to next question']
+        },
+        {
+            id:20,
+            type:'multiple choice',
+            title:null,
+            question: "After another 6 months pass, Mr. H's PSA is 6.2.  His DRE is unchanged. He undergoes a repeat prostate biopsy (1 year after his diagnosis) that demonstrates Gleason 3+3 disease in 1/6 R-sided cores and 4/6 L-sided cores with a maximum of up to 40% of tissue involved, similar to his prior biopsies. There is no change in his MRI findings. How would you like to proceed? ",
+            options:[
+                {   
+                    answer:"Continue with active surveillance (PSA q6 months; DRE, repeat biopsy, MRI no more often than q12 months) ",
+                    correct:true,
+                    reason:"He has continued to undergo active surveillance without significant change in his disease status.  At this time, there is no need to order additional tests beyond his scheduled surveillance."
+                },
+                {
+                    answer:"Order additional tests (ie repeat additional tests ahead of surveillance schedule).",
+                    correct:false,
+                    reason:""
+                },
+                {
+                    answer:"Recommend definitive treatment.",
+                    correct:false,
+                    reason:"He has continued on active surveillance without significant change in his disease status. Aside from patient preference, there is no need to switch to definitive therapy at this time. "
+                }
+            ]
+        },
+        {
+            id:21,
             type:'text',
             title:null,
             text:['Mr. H decides to continue with active surveillance per your recommendation. ']
         },
         {
-            id:19,
+            id:22,
             type:'text',
             title:null,
             text:["A year later, Mr. H returns to your office for a follow-up.  His most recent PSA is 7.  There is no change in his DRE.  He had a repeat TRUS biopsy two weeks ago per his plan urologist's plan for annual prostate biopsies.  The biopsy demonstrated Gleason 3+4 disease in 2/2 cores in the L base with up to 25% tissue involved.  Gleason 3+3 disease is found in 2/2 cores from the left mid with less than 5% tissue involvement.  All other cores on a standard 12-core biopsy were negative.  A repeat MRI is unchanged. "]
         },
         {
-            id:20,
+            id:23,
             type:"multiple choice",
             title:null,
             question: "Based on the given information, Mr. H's prostate cancer should be characterized as ___ risk prostate cancer, according to NCCN risk groups. ",
@@ -275,30 +322,27 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:21,
+            id:24,
             type:'text',
             title:null,
             text:["Recommending definitive therapy at this time is a reasonable, and possibly preferred, approach in Mr. H’s case.  With regards to candidates for active surveillance, NCCN recommends that active surveillance is a potential treatment option for patients with low or favorable intermediate risk prostate cancer with life expectancy of at least 10 years. Additionally, precise criteria for triggering definitive therapy in patients on active surveillance are not universally established.  Because of the above, it would not be technically incorrect to consider continuation of active surveillance in Mr. H's case given that he still has favorable intermediate risk disease. That said, active surveillance should be approached with more caution in the setting of favorable intermediate risk disease.  Furthermore, the criteria by which a patient qualifies for favorable intermediate disease may also be relevant.  For example, a study by Musunuru et al (Journal of Urology 2016) compared outcomes in low and intermediate risk patients who were on active surveillance. In summary, their findings suggested that while active surveillance may be appropriate for patients with favorable intermediate risk disease with Gleason 6 disease, active surveillance leads to worse outcomes for patients with Gleason 7 disease. In Mr. H's case, he was reclassified as favorable intermediate risk disease by virtue of Gleason 3+4 disease on repeat biopsy. It is therefore a reasonable choice to proceed with definitive treatment in his case.   One possible approach in practice is to tend towards active surveillance for patients with low-risk disease and initiation of definitive therapy at the time of progression to intermediate risk disease.  However, it is important to understand that the available data paint a more nuanced picture with questions that remain incompletely answered as to the optimal candidates for active surveillance and the optimal criteria upon which active surveillance should give way to definitive therapy.  Additionally, patient age could be considered in this situation.  Had Mr. H been significantly older or had more significant comorbidities, having a higher threshold to transition from active surveillance to definitive therapy may be reasonable, as the competing risks of older age and other health issues may preclude the necessity for definitive therapy. "]
         },
         {
-            id:22,
+            id:25,
             type:'text',
             title:null,
             text:["After a discussion of continuing active surveillance vs starting definitive therapy, you and Mr. H agree that it is time to proceed with definitive therapy."]
         },
         {
-            id:23,
-            type:'seeAnswerButton',
+            id:26,
+            type:'checkboxes',
             title:null,
-            questions:[
-                {
-                    question:"Not sure how to display this question",
-                    answer:"Not sure how to display this question"
-                }
-            ]
+            question:"Which of the following would be reasonable treatment options for his favorable intermediate risk prostate cancer? Select all that apply ",
+            selections:["Radical Prostatectomy","EBRT alone","EBRT + short-course ADT","EBRT + brachytherapy.","Brachytherapy alone"],
+            answer:"The answer is Radical Prostatectomy, EBRT alone and Brachytherapy alone    Per NCCN guidelines, options for definitive therapy for favorable intermediate risk prostate cancer include radical prostatectomy, EBRT, or brachytherapy.  For favorable intermediate risk patients who undergo EBRT, the addition of a brachytherapy boost is not warranted.  With regards to the use of ADT, it is common to treat patients with favorable intermediate risk prostate cancer with radiation alone. The RTOG 9408 study demonstrated that short-course ADT, when added to EBRT, improved rates of biochemical failure, distant metastases, prostate-cancer specific mortality, and overall survival (Jones et al, NEJM 2011).  The majority of patients on this trial had intermediate risk disease, including patients with both favorable and unfavorable intermediate risk disease.  A subsequent secondary analysis (Zumsteg et al, JAMA Netw Open) suggests that improved outcomes with ADT were seen in patients with unfavorable intermediate risk disease but not in those with favorable intermediate risk disease.  That said, ADT could be considered even in the setting of favorable intermediate risk disease, especially for patients whose risk factors (PSA, DRE, biopsy, and imaging results if done) are close to meeting criteria for unfavorable intermediate risk disease.  "
         },
         {
-            id: 24,
+            id: 27,
             type: 'learningPoints',
             title: 'Learning Points',
             text:[
@@ -312,12 +356,325 @@ export const prostateCancerA = {
                 "-For patients with favorable intermediate risk disease, definitive treatment options include radical prostatectomy and RT with either ERBT or brachytherapy. ADT is not typically recommended "
             ]
         }
+    ],
+
+    "Radiation Planning":[
+        {
+            id:28,
+            type:'text',
+            title:null,
+            text:[
+                "Mr. H returns to your department to undergo his CT simulation.  In order to properly plan his treatment, you will need to simulate him properly."
+            ]
+        },
+        {
+            id: 29,
+            type:"multiple choice",
+            title:null,
+            question:"Of the following options, how would you prefer to simulate the patient? ",
+            options:[
+                {
+                    answer:"Empty bladder, full rectum",
+                    correct:false,
+                    reason:"A full bladder is preferable to an empty bladder for simulation because increased bladder fill will decrease the amount of the bladder wall contained within the RT field and may also potentially move bowel away from the treatment field.  It should be noted that having an entirely full bladder is likely to be uncomfortable for patients and difficult to reproduce on a daily basis.  Therefore a 'mostly full' or 'comfortably full' bladder is ideal.  An empty rectum is preferable to a full rectum as a full rectum can push the prostate anterior and is more difficult to reproduce than an empty rectum.  To that end, it is common to instruct patients to use an enema prior to simulation in order ensure an empty rectum. "
+                },
+                {
+                    answer:"Empty bladder, empty rectum",
+                    correcy:false,
+                    reason:"A full bladder is preferable to an empty bladder for simulation because increased bladder fill will decrease the amount of the bladder wall contained within the RT field and may also potentially move bowel away from the treatment field.  It should be noted that having an entirely full bladder is likely to be uncomfortable for patients and difficult to reproduce on a daily basis.  Therefore a 'mostly full' or 'comfortably full' bladder is ideal.  An empty rectum is preferable to a full rectum as a full rectum can push the prostate anterior and is more difficult to reproduce than an empty rectum.  To that end, it is common to instruct patients to use an enema prior to simulation in order ensure an empty rectum. "
+                },
+                {
+                    answer:"Full bladder, full rectum",
+                    correct:false,
+                    reason:"A full bladder is preferable to an empty bladder for simulation because increased bladder fill will decrease the amount of the bladder wall contained within the RT field and may also potentially move bowel away from the treatment field.  It should be noted that having an entirely full bladder is likely to be uncomfortable for patients and difficult to reproduce on a daily basis.  Therefore a 'mostly full' or 'comfortably full' bladder is ideal.  An empty rectum is preferable to a full rectum as a full rectum can push the prostate anterior and is more difficult to reproduce than an empty rectum.  To that end, it is common to instruct patients to use an enema prior to simulation in order ensure an empty rectum. "
+                },{
+                    answer:"Full bladder, empty rectum",
+                    correct:true,
+                    reason:"A full bladder is preferable to an empty bladder for simulation because increased bladder fill will decrease the amount of the bladder wall contained within the RT field and may also potentially move bowel away from the treatment field.  It should be noted that having an entirely full bladder is likely to be uncomfortable for patients and difficult to reproduce on a daily basis.  Therefore a 'mostly full' or 'comfortably full' bladder is ideal.  An empty rectum is preferable to a full rectum as a full rectum can push the prostate anterior and is more difficult to reproduce than an empty rectum.  To that end, it is common to instruct patients to use an enema prior to simulation in order ensure an empty rectum. "
+                }
+            ]
+        },
+        {
+            id:30,
+            type:'text',
+            title:null,
+            text:["good job! Please proceed to next question"]
+        },
+        {
+            id:31,
+            type:'text',
+            title:null,
+            text:["Based on prior background, please proceed to next question"]
+        },
+        {
+            id:32,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"What else could you consider doing to limit the amount of variability in rectal filling from day to day?",
+                    answer:"An endorectal balloon can be used at simulation and for daily treatments to limit intertreatment variability in rectal filling and prostate positioning.  For patients having difficulty maintaining an empty rectum during the treatment course, alterations in diet as well as medications like simethicone could be used to help address this issue."
+                },
+                {
+                    question:"What position do you want his arms to be in during simulation?",
+                    answer:"Arms should be out of the treatment field.  From prostate cancer patients, it is common to place the arms on the chest and have patients hold a ring in their hands to ensure that the arms do not unconsciously move down into the treatment field during treatment."
+                },
+                {
+                    question:"What type of immobilization device would you use during simulation?",
+                    answer:"A lower body Vac-Lok or similar device should be strongly considered to increase daily reproducibility. "
+                }
+            ]
+        },
+        {
+            id:33,
+            type:'learningPoints',
+            title: 'Simulation',
+            text:["Simulation is typically done with a comfortably full bladder and an empty rectum (typically achieve with enema prep).  An endorectal balloon can also be used for simulation and treatment, though this should be weighed against patient comfort.  Arms should be on the patient's chest and a lower body immobilization device is recommended."]
+        },
+        {
+            id:34,
+            type:'text',
+            title:'Target Delineation',
+            text:['Now that Mr. H has undergone a CT simulation, you need to determine what volumes you will treat.']
+        },
+        {
+            id:35,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"In addition to the entire prostate, would you include any other structures in your CTV? ",
+                    answer:"It is common to include the proximal SVs in the CTV for patients undergoing definitive EBRT for intermediate risk prostate cancer.  A risk adapted approach is also possible and has been used on multiple studies.  In such studies, the SVs may be excluded from the target volume if the risk of SV invasion is less than ~10-15% based on tools such as the Partin or MSKCC nomograms.   Ultimately, you decide to treat both the prostate as well as the proximal 1cm of the SVs in Mr. H's case. "
+                },
+                {
+                    question:"What margins would you use to expand your CTV into a PTV?",
+                    answer:"There is not a single correct answer, though it is common to use margins of approximately 5-7mm in all directions, with a slightly smaller margin posteriorly(~3-5mm) and possibly slightly larger margins in the superior and inferior direction (~7mm).  Precise margins will vary based on daily imaging and immobilization techniques.  "
+                }
+            ]
+        },
+        {
+            id:36,
+            type:'learningPoints',
+            title:'Target Delineation',
+            text:["The prostate will of course be included in the treatment volume.  It is common to include the proximal SVs in the treatment of favorable intermediate risk disease, though a risk adapted approach based on the likelihood of SV involvement has also been used. PTV margins of approximately 5-7mm are typically used, with slightly smaller margins posteriorly (~3-5mm) and possibly slightly larger margins in the superior and inferior direction (~7mm)"]
+        },
+        {
+            id:37,
+            type:'text',
+            title:'Radiation technique',
+            text:["In addition to deciding what volumes you want to treat, you need to decide what radiation technique you will use to treat Mr. H. "]
+        },
+        {
+            id:38,
+            type:"multiple choice",
+            title:null,
+            question:"What technique would you use to treat this patient? ",
+            options:[
+                {
+                    answer:"3D CRT",
+                    correct:true,
+                    reason:"Any of the three listed options may be used in Mr. H’s case.  Please see the next slide for further explanation."
+                },
+                {
+                    answer:"IMRT/VMAT",
+                    correct:true,
+                    reason:"Any of the three listed options may be used in Mr. H’s case.  Please see the next slide for further explanation.",
+                },
+                {
+                    answer:"SBRT",
+                    correct:true,
+                    reason:"Any of the three listed options may be used in Mr. H’s case.  Please see the next slide for further explanation."
+                }
+            ]
+        },
+        {
+            id:39,
+            type:'learningPoints',
+            title:'Learning Points',
+            text:[
+                "Radiation technique: While 3D CRT could be used for the treatment of prostate cancer, some of the retrospective studies done to compare the use of 3D CRT to IMRT have demonstrated decreased GI toxicity with the use of IMRT.  Nationwide, IMRT is the predominant technique used for treatment of prostate cancer.  While IMRT is frequently used and well-established as a suitable radiation technique for the management of prostate cancer, there is a growing body of literature surrounding the use of SBRT for the definitive treatment of prostate cancer.  They HYPO-RT-PC study, for example, was a multi-institutional, prospective, randomized, non-inferiority trial of 1,180 men with intermediate-high risk prostate cancer who were randomized to conventional fractionation vs ultra-hypofractionated treatment (7 fractions total, 3 days per week).  The study suggested that ultra-hypofractionation is non-inferior to conventional fractionation with regards to failure-free survival.  Early toxicity was greater with ultra-hypofractionation, but late toxicity was similar between the two groups. While this is still an emerging technique, the growing literature regarding SBRT for the definitive treatment of prostate cancer is reflected in the NCCN recommendation that SBRT is an acceptable treatment technique, with the caveat longer-term follow-up and additional prospective multi-institutional data are needed, especially due to theoretical concern for increased late toxicity."
+            ]
+        },
+        {
+            id:40,
+            type:'text',
+            title:'Dose Prescription',
+            text:["Now that you have decided the technique you will use and the volumes you plan to treat, you will need to decide the proper treatment dose."]
+        },
+        {
+            id:41,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"To what dose/fractionation would you treat Mr. H's prostate? ",
+                    answer:"Moderately hypofractionated schemes would be appropriate in his case.  Multiple studies have been conducted to compare moderately hypofractionated image-guided IMRT schemes to conventional fractionation.  On the whole, these studies have shown similar efficacy of moderately hypofractionated regimens and many, but not all, of these trials also showed similar toxicity between moderately hypofractionated and conventional regimens. Precise doses and fractionation may vary somewhat, as different dosing schemes have been used on various trials.  However, recommended moderately hypofractionated dosing schemes typically fall in the approximate range of 60-70Gy/20-28fx.  As an example, 70Gy/28fx was used on the RTOG 0415 and 60Gy/20fx was used on the PROFIT and CHHiP trials. "
+                },
+                {
+                    question:"To what dose/fractionation would you treat the proximal SVs? ",
+                    answer:"When the proximal SVs are included in the treatment volume for favorable intermediate risk disease, it is common to take them to a reduced dose. The Dutch HYPRO trial is an example in which this was done.  On this study, the prostate was treated to 64.6Gy at 3.4Gy/fx whereas the seminal vesicles, when included, were treated to 54.4Gy at 3.4Gy/fx.   When using a dose of 70Gy/28fx, a common practice is to treat the entire prostate and proximal seminal vesicles to 50Gy/20fx, followed by a cone-down to the prostate alone for the final 8 fractions."
+                },
+                {
+                    question:"Would you use a different dose/fractionation if Mr. H had significant urinary symptoms at the time of presentation (AUA 18)? ",
+                    answer:"Yes.  In patients with worse urinary symptoms at presentation, consideration should be given to conventional fractionation due to concern for worse acute, and possibly late, toxicity in this setting.  NCCN recommends a range of 1.8-2Gy x 37-45fx in such cases.  A common regimen is 78Gy/39fx in such cases (the prostate and proximal SVs can be treated to 54Gy/27fx followed by a sequential boost to the prostate)"
+                }
+            ]
+        },
+        {
+            id:42,
+            type:'text',
+            title:null,
+            text:[
+                "You decide to treat Mr. H’s prostate and proximal SVs to a dose of 50Gy/20fx followed by a sequential boost to the prostate to a total dose of 70Gy/28fx. ",
+                "Learning Points",
+                "Dosing: Moderately hypofractionated regimens have generally become more widely used in the treatment of prostate cancer, as multiple studies have demonstrated similar efficacy with reasonable toxicity profiles.  Common dosing ranges for hypofractionated regimens typically fall in an approximate range of 60-70Gy/20-28fx. For patients with significantly bothersome urinary symptoms at presentation, consideration should be given to conventional fractionation as there is concern for worse toxicity with hypofractionated regimens in this setting.  NCCN recommends a range of 1.8-2Gy x 37-45fx in such cases.  A common regimen is 78Gy/39fx in such cases. When the proximal seminal vesicles are included in the treatment volume, they are frequently treated to a lower dose than the prostate itself.  "
+            ]
+        },
+        {
+            id:43,
+            type:'text',
+            title: 'Daily Imaging',
+            text:[
+                "In order to make sure that you are treating Mr. H properly, you need to consider important aspects of his daily treatment set-up."
+            ]
+        },
+        {
+            id:44,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:'What daily imaging would you like to use for this patient to verify patient positioning? ',
+                    answer:"Daily CBCT is reasonable in this case in order to allow for soft tissue visualization.  In patients who have had fiducials placed, which Mr. H did not, planar imaging can be used instead of CTs. "
+                },
+                {
+                    question:"What structure should the therapists align to when using daily imaging to confirm Mr. H's positioning? ",
+                    answer:"The prostate.  While this may seem obvious, it is important to remember to align to the prostate rather than to other structures such as bony anatomy.  The prostate moves independently from the bony pelvis and so aligning to the bony anatomy may or may not lead to proper positioning of the target.  "
+                }
+            ]
+        }
+    ],
+
+    "OTVs": [
+        {
+            id:45,
+            type:'text',
+            title:null,
+            text:["Mr. H is now ready to proceed with treatment."]
+        },
+        {
+            id:46,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                question:"Not sure how to present the question",
+                answer:""
+                }
+            ]
+        },
+        {
+            id:47,
+            type:'learningPoints',
+            title:'Learning Points',
+            text:[
+                "Toxicity:",  
+                "-Nocturia: Obstructive urinary symptoms such as nocturia are common acute side effects during treatment.  Tamsulosin is a common first line agent to treat nocturia.  It is commonly started at a dose of 0.4mg daily but can be increased to 0.8mg daily if needed and if the patient tolerates the initial dose well.  Tamsulosin can cause hypotension and so it is important to pay attention to vitals and ask about symptoms of hypotension. Tamsulosin should also be used with more caution in patients taking medications that may interact with tamsulosin.",
+                "-Diarrhea: Diarrhea is a possible acute toxicity during treatment. First-line medical therapy is typically with Imodium and the dose can be titrated up to 16mg daily before trying other agents.  Additionally, dietary modifications including a low-fiber diet may improve symptoms. "
+            ]
+        }
+    ],
+
+    "Follow":[
+        {
+            id:48,
+            type:'text',
+            title:null,
+            text:[
+                "You see Mr. H for follow-up 3 months after he completed treatment.  His PSA is 2.2, compared to a pre-treatment PSA of 4.3.  He feels well physically and denies any lingering urinary or bowel side effects since completing treatment."
+            ]
+        },
+        {
+            id:49,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"Mr. H asks you, 'How often do I have to have my PSA checked to make sure the cancer doesn't come back?'  How often would you recommend checking his PSA? ",
+                    answer:"NCCN recommends PSA every 6-12 months for 5 years followed by annual measurement thereafter.  For higher risk patients (which does not include Mr. H), PSA should be checked more frequently, up to every 3 months.   "
+                },
+                {
+                    question:"He asks, 'I'm glad my PSA is lower than it was before radiation, but I was hoping it would go away completely.  When will that happen?'  How would you respond to Mr. H? ",
+                    answer:"Following radiation alone, his PSA is unlikely to become undetectable.  It is important to follow his PSA regularly as described above. The PSA will likely continue to decrease over time and reach a new nadir, though this is unlikely to be at a value of 0."
+                },
+                {
+                    question:"He then asks, 'If my PSA looks good when we check it, do we need to do anything else to follow the prostate cancer?'  Is there anything else that you would recommend for routine surveillance of his prostate cancer? ",
+                    answer:"NCCN recommends DRE annually, though this can be omitted if PSA is undetectable."
+                }
+            ]
+        },
+        {
+            id:50,
+            type:'text',
+            title:null,
+            text:[
+                "Mr. H thanks you for answering his questions and will plan to follow-up with you every six months. His PSA at the next visit is 1.4 and he is happy that his PSA has continued to decrease.  He denies any urinary or bowel symptoms and there are no suspicious findings on DRE. "
+            ]
+        },
+        {
+            id:51,
+            type:'text',
+            title:null,
+            text:[
+                "Mr. H continues to follow-up with you.  Six months after his last follow-up, he still has no new symptoms and DRE is again normal, but his PSA has now increased to 2.0. "
+            ]
+        },
+        {
+            id:52,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"Mr. H is concerned about his rising PSA and asks, 'Does this mean that my cancer is coming back?'  What do you think is the most likely cause of his increased PSA? What would you like to do to manage his case at this point? ",
+                    answer:"His PSA increase is likely a 'PSA bounce'.  This is a common phenomenon after radiation therapy for prostate cancer, and is characterized by a small increase in PSA during post-treatment monitoring (followed by a return to pre-bounce or even lower PSA levels) and does not necessarily indicate recurrent disease.   Mr. H has an increasing PSA at a single time point approximately 15 months after treatment, which is a common time for a PSA bounce to occur.  It would be appropriate to continue to monitor his PSA.  A full work-up for recurrence is not needed at this time. "
+                }
+            ]
+        },
+        {
+            id:53,
+            type:'text',
+            title:null,
+            text:[
+                "You see him again for follow-up in 3 months. You opted for 3 months as opposed to a 6 month follow-up due to the rise in his PSA at his last follow-up.  His symptoms and exam are stable.  His most recent PSA was 1.6.  He is relieved that his PSA has not continued to increase. You continue to follow him every 6 months.  He is now 4 years post-treatment with no evidence of recurrence or long-term toxicities from treatment. ",
+                "Learning Points",
+                "Follow-up: NCCN recommends PSA every 6-12 months for 5 years followed by annual measurement thereafter.  For higher risk patients (which does not include Mr. H), PSA should be checked more frequently, up to every 3 months. NCCN also recommends DRE annually, though this can be omitted if PSA is undetectable. While monitoring PSA, it is important to be aware of the possibility of a benign “PSA bounce”.  This is a common phenomenon after radiation therapy for prostate cancer, and is characterized by a small increase in PSA during post-treatment monitoring (followed by a return to pre-bounce or even lower PSA levels) and does not necessarily indicate recurrent disease."
+            ]
+        },
+        {
+            id:54,
+            type:'text',
+            title:null,
+            text:[
+                "You have completed Mr. H’s case.  Please consider the following variation to Mr. H’s case and consider how this might impact your treatment decisions. "
+            ]
+        },
+        {
+            id:55,
+            type:'seeAnswerButton',
+            title:null,
+            questions:[
+                {
+                    question:"If Mr. H were 80 years old as opposed to 58 years old, how would your approach to his care change?",
+                    answer:"When managing prostate cancer, it is important to keep in mind a patient's life expectancy.  Prostate cancer is often relatively slowly progressing and, therefore, some men diagnosed with prostate cancer may not require any form of active treatment.  Life expectancy can be measured with various tools, including the Social Security Administration tables and the MSKCC Life Expectancy tool.  Social Security tables do not, of course, account for a particular patient's comorbidities and so life expectancy estimates are often increased by 50% for patient's in the best quartile of health for their age and decreased by 50% for patients in the worst quartile of health for their age. If Mr. H were an 80 year old man with average health, his life expectancy would be approximately 8.4 years based on the SSA actuarial tables.  NCCN recommends that patients with low risk prostate cancer and <10 year life expectancy should be considered for observation rather than active surveillance.  Observation entails monitoring the course of disease with the expectation to deliver palliative therapy with the goal of maintaining quality of life.  Per NCCN guidelines, patients managed with observation should have physical exam and PSA no more often than every 6 months. Patients on observation should not be monitored with routine prostate biopsies (or additional imaging) as patients on active surveillance are. If on AS for favorable intermediate risk at 80, would probably keep there as opposed to going to definitive therapy."
+                }
+            ]
+        },
+        {
+            id:56,
+            type:'text',
+            title:null,
+            text:["Congratulations, you have completed this case!"]
+        }
     ]
-
-
-
-
-
-
 
 }

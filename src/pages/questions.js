@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import NavBarUser from '../components/NavBarUser';
-import {Layout, Menu, Pagination, Card, Carousel, Modal, Button} from 'antd';
+import {Layout, Menu, Pagination, Card, Carousel, Modal, Button, Checkbox} from 'antd';
 import { CloseCircleOutlined, CheckCircleOutlined} from '@ant-design/icons';
 import {prostateCancerA} from '../questionsForCasesData/prostateCancerA';
 
@@ -35,7 +35,10 @@ const buttonLineStyle = {
   textAlign: 'center',
 }
 const buttonStyle = {
-  width:'180px'
+  minWidth:'180px',
+  textAlign:'center',
+  paddingLeft:'5px', 
+  paddingRight:'5px'
 }
 
 function Questions() {
@@ -97,7 +100,8 @@ function Questions() {
                 </div>
                 <div>
                   <h3 style={contentStyle}>
-                    {prostateCancerA[currentType][(currentPage-1)*3 + 1].type === "seeAnswerButton" ?
+
+                    {prostateCancerA[currentType][(currentPage-1)*3 + 1].type === "seeAnswerButton" ? 
                      prostateCancerA[currentType][(currentPage-1)*3 + 1].questions.map((qa, i) => {
                       return <div style = {questionStyle} key={i}>
                         {qa.question}
@@ -108,8 +112,9 @@ function Questions() {
                         </Modal>
                         </div>
                       </div>
-                    })
-                    :
+                     }) 
+                     : 
+                     prostateCancerA[currentType][(currentPage-1)*3 + 1].type === "multiple choice" ? 
                     <div>
                       <div style = {questionStyle}>{prostateCancerA[currentType][(currentPage-1)*3 + 1].question}</div>
                       <div style ={ buttonLineStyle }>
@@ -129,8 +134,24 @@ function Questions() {
                         </div>
                       })}
                       </div>
+                    </div> 
+                    :
+                    <div>
+                      <div style = {questionStyle}>{prostateCancerA[currentType][(currentPage-1)*3 + 1].question}</div>
+                      <div>
+                        {prostateCancerA[currentType][(currentPage-1)*3 + 1].selections.map((s,i) => {
+                          return <div><Checkbox>{s}</Checkbox></div>
+                        })}
+                        <div style ={ buttonLineStyle }>
+                        <Button type="primary" onClick={() => showModalViewAnswer(prostateCancerA[currentType][(currentPage-1)*3 + 1].answer)}>View Answer</Button>
+                        <Modal title="Answer" visible={isModalVisible} onOk={handleOk}>
+                          {ModalAnswer}
+                        </Modal>
+                        </div>
+                      </div>
                     </div>
-                  }
+                    }
+                  
                   </h3>
                 </div>
                 <div>
