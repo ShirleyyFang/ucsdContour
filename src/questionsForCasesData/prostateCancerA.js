@@ -552,18 +552,24 @@ export const prostateCancerA = {
                     answer:"The prostate.  While this may seem obvious, it is important to remember to align to the prostate rather than to other structures such as bony anatomy.  The prostate moves independently from the bony pelvis and so aligning to the bony anatomy may or may not lead to proper positioning of the target.  "
                 }
             ]
-        }
-    ],
-
-    "OTVs": [
+        },
         {
             id:45,
             type:'text',
             title:null,
             text:["Mr. H is now ready to proceed with treatment."]
-        },
+        }
+    ],
+
+    "OTVs": [
         {
             id:46,
+            type:'text',
+            title:null,
+            text:["Mr. H is now ready to start treatment.  You will need to monitor his progress on treatment and assist him with any side effects, questions/concerns, or other issues that arise during his treatment course."]
+        },
+        {
+            id:47,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -574,7 +580,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:47,
+            id:48,
             type:'learningPoints',
             title:'Learning Points',
             text:[
@@ -587,7 +593,7 @@ export const prostateCancerA = {
 
     "Follow":[
         {
-            id:48,
+            id:49,
             type:'text',
             title:null,
             text:[
@@ -595,7 +601,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:49,
+            id:50,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -614,7 +620,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:50,
+            id:51,
             type:'text',
             title:null,
             text:[
@@ -622,7 +628,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:51,
+            id:52,
             type:'text',
             title:null,
             text:[
@@ -630,7 +636,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:52,
+            id:53,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -641,7 +647,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:53,
+            id:54,
             type:'text',
             title:null,
             text:[
@@ -651,7 +657,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:54,
+            id:55,
             type:'text',
             title:null,
             text:[
@@ -659,7 +665,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:55,
+            id:56,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -670,7 +676,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:56,
+            id:57,
             type:'text',
             title:null,
             text:["Congratulations, you have completed this case!"]
