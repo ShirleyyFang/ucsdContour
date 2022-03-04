@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
 import NavBarUser from '../components/NavBarUser';
 import {Layout, Menu, Pagination, Card, Carousel, Modal, Button, Checkbox} from 'antd';
 import { CloseCircleOutlined, CheckCircleOutlined} from '@ant-design/icons';
@@ -47,6 +47,7 @@ function Questions() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [ModalAnswer, setModalAnswer] = useState(99);
   const [multipleChoiceAnswer, setMultipleChoiceAnswer] = useState(false);
+  const slider = useRef();
 
   const showModalViewAnswer = (value) =>{
     setIsModalVisible(true);
@@ -63,6 +64,11 @@ function Questions() {
   };
   const onChangePage = (value) => {
     setCurrentPage(value);
+    slider.current.goTo(0);
+  }
+  const changeType = (value) => {
+    setCurrentType(value);
+    onChangePage(1);
   }
 
     return(
@@ -72,7 +78,7 @@ function Questions() {
         <Layout>
         <Sider width={200} className="site-layout-background" style={{ height: '1000px' }}>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']} 
-                  onClick = {({key}) => {setCurrentType(questionTypes[key])}} 
+                  onClick = {({key}) => {changeType(questionTypes[key])}} 
                 >
                     {questionTypes.map((type,i) =>{
                         return <Menu.Item key ={i}>{type}</Menu.Item>
@@ -90,7 +96,8 @@ function Questions() {
               <div>
                 {currentType + " / Page " + currentPage}
               </div>
-              <Carousel afterChange={onChangeCarousel}>
+              <Carousel afterChange={onChangeCarousel} 
+              ref={ref => {slider.current = ref;}}>
                 <div>
                   <h3 style={contentStyle}>
                     {prostateCancerA[currentType][(currentPage-1)*3].text.map((para, i) => {
@@ -163,7 +170,7 @@ function Questions() {
                 </div>
               </Carousel>
             </Card>
-            <Pagination onChange={onChangePage} simple defaultCurrent={1} total={prostateCancerA[currentType].length /3 * 10}/>
+            <Pagination onChange={onChangePage} current={currentPage} total={prostateCancerA[currentType].length /3 * 10}/>
         </Content>
 
         </Layout>
