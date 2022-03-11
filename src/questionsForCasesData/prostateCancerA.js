@@ -768,15 +768,11 @@ export const prostateCancerA = {
         },
         {
             id:63,
-            type:'text',
-            title:null,
-            text:['Week 6 (if tamsulosin prescribed initially, if it took and extra week then this section finishes with the purple text below): Completed 28/28 treatments. His urinary symptoms remain well controlled. Since increasing the dose of Imodium, his diarrhea has resolved as well. He is now having 2-3 formed stools daily.  He thanks you for all of your help over the past 6 weeks.  You plan to see him for follow-up in 3 months with a new PSA at that time. After increasing the dose of Imodium, Mr. H’s diarrhea has been well controlled.  He thanks you for all of your help over the past 6 weeks.  Now that his treatments are finished, you plan to see him for follow-up in 3 months with a new PSA at that time.  ']
-        },
-        {
-            id:48,
             type:'learningPoints',
             title:'Learning Points',
             text:[
+                'Week 6 (if tamsulosin prescribed initially, if it took and extra week then this section finishes with the purple text below): Completed 28/28 treatments. His urinary symptoms remain well controlled. Since increasing the dose of Imodium, his diarrhea has resolved as well. He is now having 2-3 formed stools daily.  He thanks you for all of your help over the past 6 weeks.  You plan to see him for follow-up in 3 months with a new PSA at that time. After increasing the dose of Imodium, Mr. H’s diarrhea has been well controlled.  He thanks you for all of your help over the past 6 weeks. ', 
+                'Now that his treatments are finished, you plan to see him for follow-up in 3 months with a new PSA at that time.',
                 "Toxicity:",  
                 "-Nocturia: Obstructive urinary symptoms such as nocturia are common acute side effects during treatment.  Tamsulosin is a common first line agent to treat nocturia.  It is commonly started at a dose of 0.4mg daily but can be increased to 0.8mg daily if needed and if the patient tolerates the initial dose well.  Tamsulosin can cause hypotension and so it is important to pay attention to vitals and ask about symptoms of hypotension. Tamsulosin should also be used with more caution in patients taking medications that may interact with tamsulosin.",
                 "-Diarrhea: Diarrhea is a possible acute toxicity during treatment. First-line medical therapy is typically with Imodium and the dose can be titrated up to 16mg daily before trying other agents.  Additionally, dietary modifications including a low-fiber diet may improve symptoms. "
@@ -786,7 +782,7 @@ export const prostateCancerA = {
 
     "Follow":[
         {
-            id:49,
+            id:64,
             type:'text',
             title:null,
             text:[
@@ -794,7 +790,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:50,
+            id:65,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -813,7 +809,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:51,
+            id:66,
             type:'text',
             title:null,
             text:[
@@ -821,7 +817,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:52,
+            id:67,
             type:'text',
             title:null,
             text:[
@@ -829,7 +825,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:53,
+            id:68,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -840,7 +836,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:54,
+            id:69,
             type:'text',
             title:null,
             text:[
@@ -850,7 +846,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:55,
+            id:70,
             type:'text',
             title:null,
             text:[
@@ -858,7 +854,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:56,
+            id:71,
             type:'seeAnswerButton',
             title:null,
             questions:[
@@ -869,7 +865,7 @@ export const prostateCancerA = {
             ]
         },
         {
-            id:57,
+            id:72,
             type:'text',
             title:null,
             text:["Congratulations, you have completed this case!"]
