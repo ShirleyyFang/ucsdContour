@@ -570,14 +570,207 @@ export const prostateCancerA = {
         },
         {
             id:47,
-            type:'seeAnswerButton',
+            type:"multiple choice",
             title:null,
-            questions:[
+            question:"Week 1: Completed treatment 3/28.  Vitals are stable, blood pressure is 156/64, consistent with his history of hypertension.  He continues to have nocturia x 2, unchanged since consultation.  He denies urinary urgency, weak stream, or dysuria.  He denies any changes in bowel function.  His energy levels are good.  Otherwise, he feels well physically and denies any other physical symptoms. What would you like to do? ",
+            options:[
                 {
-                question:"Not sure how to present the question",
-                answer:""
+                    answer:"Continue treatment as planned",
+                    correct:true,
+                    reason:null,
+                },
+                {
+                    answer:"Enter orders.",
+                    correct:false,
+                    reason:"Mr. H is doing well on treatment thus far and it is reasonable to continue his treatment as planned"
                 }
             ]
+        },
+        {
+            id:48,
+            type:'text',
+            title:null,
+            text:['Good job, please proceed to next question']
+        },
+        {
+            id:49,
+            type:'text',
+            title:null,
+            text:['Week 2: Completed 8/28 treatments.  Vitals are stable, blood pressure is 158/66.  He endorses nocturia x 4, increased from last week, that is affected his ability to sleep.  He also notices a weak urinary stream over the past week, but denies urinary urgency or dysuria. He denies any changes in bowel function.  He is tired and attributes this to poor sleep over the past week.  You suggest that he avoid drinking water within the last 1-2 hours before going to bed.  He states that he has already been doing that, since a friend of his who was recently treated with prostate cancer had suggested it to him.  He asks, "Is there anything else we can do to help with these symptoms at night?"']
+        },
+        {
+            id:50,
+            type:"multiple choice",
+            title:null,
+            question:"What would you like to do? ",
+            options:[
+                {
+                    answer:"Continue treatment as planned. ",
+                    correct:false,
+                    reason:' If this answer is chosen, patient will come in with worse symptoms the next week.'
+                },
+                {
+                    answer:"Enter orders. Prescribe tamsulosin (dosing generally starts at 0.4mg daily).",
+                    correct:true,
+                    reason:null,
+                }
+            ]
+        },
+        {
+            id:51,
+            type:'text',
+            title:null,
+            text:['Good job, please proceed to next question']
+        },
+        {
+            id:52,
+            type:'text',
+            title:null,
+            text:['Week 3 (if tamsulosin not prescribed): Completed 13/28 treatments. Vitals are stable, BP is 152/62.  His nocturia has gotten worse over the past week and he is now waking up about 6 times every night.  He is not able to get very much sleep and feels very tired. He is also urinating frequently during the day and feels like he has a weaker urinary stream and is not fully emptying his bladder.  He asks, “Is there anything I can do to make these symptoms better?”']
+        },
+        {
+            id:53,
+            type:'multiple choice',
+            title:null,
+            question:"What would you like to do? ",
+            options:[
+                {
+                    answer:"Continue treatment as planned. ",
+                    correct:false,
+                    reason:'If this answer is chosen, Feedback is: “Over the next week, Mr. H’s urinary symptoms continue to get worse.  He does not think that he can tolerate any further treatments.  He decides to quit radiation in the hopes that his symptoms will improve.   If his symptoms had been managed appropriately, Mr. H likely would have continued on treatment. Please return to the case and find a way to manage Mr. H’s urinary symptoms while on treatment.”'
+                },
+                {
+                    answer:"Enter orders. Prescribe tamsulosin (dosing generally starts at 0.4mg daily).",
+                    correct:true,
+                    reason:null,
+                }
+            ]
+        },
+        {
+            id:54,
+            type:'text',
+            title:null,
+            text:['Good job, please proceed to next question']
+        },     
+        {
+            id:55,
+            type:'text',
+            title:null,
+            text:["Week 3 (if tamsulosin prescribed initially, Week 4 if it took an extra week to prescribe): Completed 13/28 (18/28 if took an extra week to prescribe tamsulosin) treatments.  Vitals are stable, BP is 152/62.  He continues to have nocturia 3-4x nightly. He takes one of the tamsulosin tablets each day and thinks the medication is helping a little bit, but not enough. He is still having trouble falling back asleep after using the restroom and he is tired today.  He continues to endorse some weak urinary stream.  He denies urinary urgency or dysuria.  He denies any changes in bowel function. He denies any other physical symptoms."]
+        },
+        {
+            id:56,
+            type:'multiple choice',
+            title:null,
+            question:"What would you like to do?  ",
+            options:[
+                {
+                    answer:"Continue treatment as planned",
+                    correct:false,
+                    reason:" Incorrect! Mr. H continues to have symptoms that may be improved with medical management. Adjust a current medication. "
+                },
+                {
+                    answer:"Adjust a current medication.",
+                    correct:true,
+                    reason:"Tamsulosin is often prescribed at a starting dose of 0.4mg daily, due to concern for possible side effects, including possible hypotension.  However, the dose can be increased to 0.8mg daily if needed for increased effect.  Given that Mr. H feels the medication has helped a little bit but not enough and that his blood pressure has remained stable, increasing the dose makes sense in his case.  Due to the possibility for side effects, tamsulosin should be used with more caution in patients taking other medications that may interact with tamsulosin (such as other alpha receptor blocker, a PDE5 inhibitor, or nitroglycerin)."
+                },
+                {
+                    answer:" Prescribe a new medication for his urinary symptoms.",
+                    correct:false,
+                    reason: "While there are other medications to besides tamsulosin that could help with his urinary symptoms, it makes sense to try increasing the dose of tamsulosin before starting an additional medication. "
+                },
+                {
+                    answer:"Prescribe a sleep aid. ",
+                    correct:false,
+                    reason:"The main reason for Mr. H’s difficulty sleeping is his urinary symptoms.  You should try to address those rather than prescribe a sleep aid."
+                },
+                {
+                    answer:"Take a treatment break and resume once his symptoms improve.",
+                    correct:false,
+                    reason:"Trying to optimize medical management of Mr. H’s symptoms is preferable to taking a treatment break. "
+                }
+            ]
+        },
+        {
+            id:57,
+            type:'text',
+            title:null,
+            text:['Good job, please proceed to next question']
+        },
+        {
+            id:58,
+            typr:'text',
+            title:null,
+            text:["Week 4 (if tamsulosin prescribed initially, Week 5 if it took an extra week to prescribe): Completed 18/28 treatments (23/28 if took an extra week to prescribe tamsulosin). Vital signs are stable, BP 146/60.  Now that he has increased the dose of tamsulosin, his nocturia has returned to 2x night, which he finds manageable.  His urinary flow has also improved.  He denies dysuria or urinary urgency.  Today, he does note that he has been having 3-4 episodes of loose stools over the past week.  He has tried to modify his diet, including having a lower fiber diet and avoiding spicy foods, which he usually eats frequently.  He asks if this is a possible symptom of radiation.  When you confirm that it is, he asks, 'Is there anything you can give me to help with diarrhea?'"]
+        },
+        {
+            id:59,
+            type:'multiple choice',
+            title:null,
+            question:"What would you like to do? ",
+            options:[
+                {
+                    answer:"Continue treatment as planned. ",
+                    correct:false,
+                    reason:'Given that Mr. H has a new acute toxicity from radiation, this toxicity should be adequately managed before continuing with treatment. Please prescribe a medication to help with Mr. H’s diarrhea.'
+                },
+                {
+                    answer:"Enter orders. Prescribe tamsulosin (dosing generally starts at 0.4mg daily).",
+                    correct:true,
+                    reason:null,
+                }
+            ]
+        },
+        {
+            id:60,
+            type:'text',
+            title:null,
+            text:['Good job, please proceed to next question']
+        },
+        {
+            id:61,
+            type:'text',
+            title:null,
+            text:['Week 5 (if tamsulosin prescribed initially, Week 6 if it took an extra week to prescribe): Completed 23/28 treatments (23/28 if took an extra week to prescribe tamsulosin).  Vital signs are stable.  His urinary symptoms remain under control.  He has been taking two tablets of the Imodium that you prescribed each day.  He continues to have 3 episodes of loose stools daily and is concerned that the medication is not working.  Otherwise, he denies any new physical complaints.  ']
+        },
+        {
+            id:62,
+            type:'multiple choice',
+            title:null,
+            question:"What would you like to do?  ",
+            options:[
+                {
+                    answer:"Continue treatment as planned",
+                    correct:false,
+                    reason:"Incorrect! As was the case with Mr. H’s urinary symptoms, we should try to help manage his acute bowel symptoms. "
+                },
+                {
+                    answer:"Adjust a current medication.",
+                    correct:true,
+                    reason:"His Imodium dose should be increased. Imodium dosing should be titrated based on effect.   Imodium tablets typically contain 2mg of loperamide. A common approach is to start with an initial dose of 4mg, which Mr. H was taking, then take an additional 2mg after each loose stool.  The maximum recommended dose is typically 16mg/day",
+                },
+                {
+                    answer:" Prescribe a new medication for his urinary symptoms.",
+                    correct:false,
+                    reason: "While there are other medications that can help with acute bowel toxicity secondary to radiation, it makes sense to try adjusting the dose of his current medication before adding a new medication to help with his loose stools. "
+                },
+                {
+                    answer:"Prescribed a new medication. ",
+                    correct:false,
+                    reason:"The main reason for Mr. H’s difficulty sleeping is his urinary symptoms.  You should try to address those rather than prescribe a sleep aid."
+                },
+                {
+                    answer:"Take a treatment break and resume once his symptoms improve.",
+                    correct:false,
+                    reason:" It is preferable to optimize the medical management of Mr. H’s diarrhea as opposed to taking a treatment break. "
+                }
+            ]
+        },
+        {
+            id:63,
+            type:'text',
+            title:null,
+            text:['Week 6 (if tamsulosin prescribed initially, if it took and extra week then this section finishes with the purple text below): Completed 28/28 treatments. His urinary symptoms remain well controlled. Since increasing the dose of Imodium, his diarrhea has resolved as well. He is now having 2-3 formed stools daily.  He thanks you for all of your help over the past 6 weeks.  You plan to see him for follow-up in 3 months with a new PSA at that time. After increasing the dose of Imodium, Mr. H’s diarrhea has been well controlled.  He thanks you for all of your help over the past 6 weeks.  Now that his treatments are finished, you plan to see him for follow-up in 3 months with a new PSA at that time.  ']
         },
         {
             id:48,
