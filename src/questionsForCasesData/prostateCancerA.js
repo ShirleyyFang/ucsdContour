@@ -871,5 +871,4 @@ export const prostateCancerA = {
             text:["Congratulations, you have completed this case!"]
         }
     ]
-    
 }
