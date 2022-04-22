@@ -4,6 +4,7 @@ import NavBarUser from '../components/NavBarUser';
 import {Card, Avatar, Typography, Row, Col, Checkbox, Button} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
+import { API } from '../../config.js'
 
 const {Paragraph} = Typography;
 
@@ -11,8 +12,14 @@ const {Paragraph} = Typography;
 function Profile() {
 
     const [editableStr, setEditableStr] = useState('This is an editable text.');
+    const [userName, setUsername] = useState('username');
+    const [password, setPassword] = useState('password');
+    const [email, setEmail] = useState('email');
+
     const navigate = useNavigate();
     let cancers = [];
+    
+
 
     return (
         <Fragment>
@@ -31,15 +38,15 @@ function Profile() {
                 <Card title="My Account" >
                     <Row>
                     <Col span ={5}>Username: </Col> 
-                    <Col span ={19}><Paragraph editable={{ onChange: setEditableStr }}>{editableStr}</Paragraph></Col>
+                    <Col span ={19}><Paragraph editable={{ onChange: setUsername }}>{userName}</Paragraph></Col>
                     </Row>
                     <Row>
                     <Col span ={5}>Email: </Col> 
-                    <Col span ={19}><Paragraph editable={{ onChange: setEditableStr }}>{editableStr}</Paragraph></Col>
+                    <Col span ={19}><Paragraph editable={{ onChange: setEmail }}>{email}</Paragraph></Col>
                     </Row>
                     <Row>
                     <Col span ={5}>Password: </Col> 
-                    <Col span ={19}><Paragraph editable={{ onChange: setEditableStr }}>{editableStr}</Paragraph></Col>
+                    <Col span ={19}><Paragraph editable={{ onChange: setPassword }}>{password}</Paragraph></Col>
                     </Row>
                 </Card>
             </div>
@@ -72,13 +79,38 @@ function Profile() {
             </div>
         </Fragment>
     );
+    
     function onChange(checkedValues) {
         cancers = checkedValues;
         console.log(cancers);
     }
     function onClick(){
-        navigate('/cases',{state: cancers});
-        console.log("pass",cancers)
+        const data = {
+            username:userName,
+            passHash:password,
+            name:"Online User *** testing",
+            email: email,
+            postGradYear:2043,
+
+            isHeadAndNeck:false,
+            isGynecologic:false,
+            isGastrointestinal:false,
+            isPediatric:false,
+            isGenitourinary:false
+        }
+        
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        try{
+            fetch(API.endpoint, requestOptions)
+                .then(navigate('/cases',{state: cancers}));
+            }
+        catch(err){
+            console.log("API ERROR: " + err)
+        }
     }
 };
 
