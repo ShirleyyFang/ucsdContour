@@ -4,7 +4,7 @@ import NavBarUser from '../components/NavBarUser';
 import {Card, Avatar, Typography, Row, Col, Checkbox, Button} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
-import { API } from '../../config.js'
+import { API } from '../config.js'
 
 const {Paragraph} = Typography;
 
